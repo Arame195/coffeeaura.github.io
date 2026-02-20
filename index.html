@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="hy">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Coffee Aura</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" href="black.logo.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+</head>
+
+<body>
+  <header class="hero">
+    <video class="hero-video" muted playsinline preload="metadata">
+      <source src="assets/video/fon-video.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay">
+      <img src="assets/images/ui-logo/white.logo.png" class="hero-logo" alt="logo">
+    </div>
+  </header>
+
+  <input class="menu-icon" type="checkbox" id="menu-icon" name="menu-icon" />
+  <label for="menu-icon"></label>
+  <nav class="nav">
+    <ul>
+      <li><a href="index.html" data-i18n="glavnaya">Главная</a></li>
+      <li><a href="menu.html" data-i18n="menu">Меню</a></li>
+      <li><a href="about.html" data-i18n="about">О Нас</a></li>
+
+      <div class="lang-switch">
+        <li><button onclick="changeLanguage('hy')"> ARM 🇦🇲</button></li>
+        <li><button onclick="changeLanguage('ru')"> RUS 🇷🇺</button></li>
+        <li><button onclick="changeLanguage('en')"> ENG 🇺🇸 </button></li>
+      </div>
+    </ul>
+  </nav>
+
+  <div class="about">
+    <h1 class="fade-in" data-i18n="welcome">Добро пожаловать в Aura</h1>
+    <p class="fade-in" data-i18n="welcome_p">
+      Aura — кофейня, где каждый глоток кофе создаёт настроение и дарит маленькие моменты
+      радости. Мы открылись для всех, кто ценит уютную атмосферу, качественные напитки и искреннее гостеприимство.
+    </p>
+
+    <div class="photo_aura">
+      <div style="position:relative;overflow:hidden;"><a
+          href="https://yandex.ru/maps/org/aura/39045679942/?utm_medium=mapframe&utm_source=maps"
+          style="color:#eee;font-size:12px;position:absolute;top:0px;">Аура</a><a
+          href="https://yandex.ru/maps/1104/cherkessk/category/cafe/184106390/?utm_medium=mapframe&utm_source=maps"
+          style="color:#eee;font-size:12px;position:absolute;top:14px;">Кафе в Черкесске</a><iframe
+          src="https://yandex.ru/map-widget/v1/?ll=42.050549%2C44.230620&mode=search&oid=39045679942&ol=biz&sctx=ZAAAAAgBEAAaKAoSCVK2SNqNCEVAEaD6B5EMHUZAEhIJhBJm2v6V3j8Re2ZJgJpayj8iBgABAgMEBSgKOABAjFZIAWoCcnWdAc3MzD2gAQCoAQC9AdZTmETCAQbGlre6kQGCAgjQkNGD0YDQsIoCAJICAJoCDGRlc2t0b3AtbWFwcw%3D%3D&sll=42.050549%2C44.230620&sspn=0.014935%2C0.006434&tab=reviews&text=%D0%90%D1%83%D1%80%D0%B0&z=17"
+          width="500" height="400" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+    </div>
+  </div>
+  </div>
+  <div class="button-container">
+    <a href="about.html" class="custom-dashed-btn scroll-anim">
+      <span data-i18n="podrobno">читать подробно</span>
+      <svg class="border-svg">
+        <rect x="0" y="0" width="100%" height="100%" rx="40" ry="40" />
+      </svg>
+    </a>
+  </div>
+
+  <div class="hero-text">
+    <div class="hero-h1">
+      <h1 class="fade-in" data-i18n="love">Следуй за любовью...</h1>
+    </div>
+
+    <div class="hero-p">
+      <p class="fade-in" data-i18n="hero_p">Наша история начинается с этой чашки. Первый адрес, первый аромат и ты — наш самый важный
+        гость. Мы только открылись, чтобы каждый твой день был наполнен вкусом и теплом. Приходи за вдохновением — наша
+        общая история только начинается!</p>
+    </div>
+  </div>
+  </header>
+
+  <div id="overlay" class="overlay"></div>
+  <!-- ABOUT -->
+  <section class="about reveal">
+    <h2 data-i18n="why_aura">Почему выбирают нас?</h2>
+    <div class="about-items reveal-group">
+      <div class="item" data-i18n="zerna">☕ Свежие зёрна</div>
+      <div class="item" data-i18n="barists">👨‍🍳 Опытные бариста</div>
+      <div class="item" data-i18n="mesto">📍 Удобное место</div>
+      <div class="item" data-i18n="vdoxnovenie">☕️🥤 Вдохновение в каждой чашке</div>
+      <div class="item" data-i18n="energy">☕️❄️ Энергия для новых идей</div>
+      <div class="item" data-i18n="vkus">🥛 Вкус, который запомнится</div>
+      <div class="item" data-i18n="modno">☑️ Здесь модно пить кофе</div>
+    </div>
+  </section>
+
+  </div>
+
+  <section class="coffee-footer">
+    <div class="coffee-container">
+
+      <!-- Верхние карточки -->
+      <div class="coffee-cards">
+
+        <div class="coffee-card">
+          <i class="fa-solid fa-location-dot"></i>
+          <h4 data-i18n="adres">Наш адрес</h4>
+          <p data-i18n="location">г.Черкесск ул.Горького 2</p>
+        </div>
+
+        <div class="coffee-card">
+          <i class="fa-solid fa-phone"></i>
+          <h4 data-i18n="phone">Телефон</h4>
+          <p>+7 (928) 390-01-99</p>
+        </div>
+
+        <div class="coffee-card">
+          <i class="fa-solid fa-clock"></i>
+          <h4 data-i18n="works">Часы работы</h4>
+          <p>09:00 – 22:00</p>
+        </div>
+
+        <div class="coffee-card">
+          <i class="fa-solid fa-envelope"></i>
+          <h4>Email</h4>
+          <p></p>
+        </div>
+
+      </div>
+
+      <!-- Нижняя часть -->
+      <div class="coffee-bottom">
+
+        <!-- Левая сторона -->
+        <div class="coffee-info">
+          <h2 data-i18n="svyaz">Свяжитесь с нами</h2>
+          <p data-i18n="svyaz_p">
+            Мы готовим лучший кофе в городе.
+            Приходите насладиться ароматом свежей арабики
+            и уютной атмосферой.
+          </p>
+
+          <div class="coffee-socials">
+            <a href="https://www.instagram.com/auracoffee.che?igsh=MWMwanpueTl1YmNhYQ=="><i
+                class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@auracoffee.che?_r=1"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://t.me/anonume09"><i class="fa-brands fa-telegram"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <div class="private">
+    <p data-i18n="private_text">© 2026 — Все права защищены</p>
+  </div>
+
+  <script src="js/index.js"></script>
+  <script src="js/lang.js"></script>
+</body>
+
+</html>
