@@ -584,6 +584,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
+  color: blue;
 }
 
 .arrow {
@@ -594,6 +595,7 @@ body {
   border: none;
   font-size: 28px;
   cursor: pointer;
+  color: blue;
 }
 
 .arrow.left { left: 10px; }
@@ -695,4 +697,5 @@ body {
   text-align: center;
   font-weight: 800;
 }
+
 
