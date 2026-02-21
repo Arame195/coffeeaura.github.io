@@ -1,20 +1,6 @@
 function initScrollText() {
-
   const paragraphs = document.querySelectorAll(".scroll-section p");
-
-  paragraphs.forEach(p => {
-    const words = p.textContent.trim().split(" ");
-    p.innerHTML = "";
-
-    words.forEach(word => {
-      const span = document.createElement("span");
-      span.className = "word";
-      span.textContent = word + " ";
-      p.appendChild(span);
-    });
-  });
-
-}
+};
 
 const textElements = document.querySelectorAll('.reveal-text');
 const imageElement = document.querySelector('.reveal-image');

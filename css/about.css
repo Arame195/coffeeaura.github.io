@@ -2,6 +2,10 @@
   color: white;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
 
 .section-center {
@@ -416,13 +420,12 @@ svg text {
 }
 
 .cup {
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: auto;
-  display: flex;
+  display: block;
+  margin: 0 auto;
   position: relative;
-  top: 200px;
-  margin: 100px;
-  padding: 0;
   animation: floatCup 3s ease-out infinite;
 }
 
@@ -437,6 +440,21 @@ svg text {
 
   100% {
     transform: translate(-50%, -50%) translateY(0px);
+  }
+}
+
+.cup-section {
+  display: flex;
+  justify-content: center;
+  padding: 150px 0 50px 0;
+}
+
+@media (max-width: 768px) {
+  .cup {
+    max-width: 100%;
+    height: auto;
+    margin-left: 300px;
+    display: block;
   }
 }
 
