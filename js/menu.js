@@ -1,13 +1,11 @@
-
-
 document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll('.fade-in');
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('active'); // запускаем анимацию
-        obs.unobserve(entry.target); // один раз
+        entry.target.classList.add('active');
+        obs.unobserve(entry.target);
       }
     });
   }, { threshold: 0.2 });
@@ -42,9 +40,38 @@ document.addEventListener("DOMContentLoaded", function () {
   Swal.fire({
     title: "Добро пожаловать в меню Aura!",
     text: "Советуем выключить VPN для корректной работы сайта ✅",
-    timer: 5000,
+    timer: 3500,
     showConfirmButton: false,
     toast: true,
-    position: 'top-end'
+    position: 'top-start'
   });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const scrollSections = document.querySelectorAll(
+    ".coffee-scroll, .dessert-scroll, .tea-scroll"
+  );
+
+  scrollSections.forEach(section => {
+
+    const cards = section.querySelectorAll(".coffee-card");
+
+    function revealCards() {
+      const containerRect = section.getBoundingClientRect();
+
+      cards.forEach(card => {
+        const cardRect = card.getBoundingClientRect();
+
+        if (cardRect.left < containerRect.right - 50) {
+          card.classList.add("show");
+        }
+      });
+    }
+
+    section.addEventListener("scroll", revealCards, { passive: true });
+
+    revealCards();
+  });
+
 });

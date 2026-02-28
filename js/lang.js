@@ -159,7 +159,6 @@ function changeLanguage(lang) {
         }
     });
 
-    // 🔥 ДОБАВЛЯЕМ ВОТ ЭТО
     if (typeof initScrollText === "function") {
         initScrollText();
     }
@@ -169,21 +168,18 @@ function changeLanguage(lang) {
     }
 }
 
-// При загрузке страницы проверяем выбранный язык
 document.addEventListener('DOMContentLoaded', () => {
     const savedLang = localStorage.getItem('lang') || 'ru';
     changeLanguage(savedLang);
 });
 
-// Кнопки смены языка
 const langButtons = document.querySelectorAll('.lang-switch button');
 langButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         const lang = btn.dataset.lang;
         changeLanguage(lang);
 
-        // Закрываем меню после смены языка
-        const menu = document.querySelector('.menu'); // ваш селектор меню
+        const menu = document.querySelector('.menu');
         if (menu) menu.classList.remove('active');
     });
 });

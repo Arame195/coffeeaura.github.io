@@ -16,12 +16,10 @@ const observer = new IntersectionObserver(entries => {
 textElements.forEach(el => observer.observe(el));
 observer.observe(imageElement);
 
-// Select all paragraphs inside scroll sections
 const paragraphs = document.querySelectorAll(".scroll-section p");
 
 let words = [];
 
-// Convert paragraphs into word spans
 document.addEventListener("DOMContentLoaded", () => {
   initScrollText();
   const sections = document.querySelectorAll(".scroll-section");
@@ -30,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const paragraphs = section.querySelectorAll("p");
     const words = [];
 
-    // Разбиваем текст на слова
     paragraphs.forEach(p => {
       const text = p.innerText.trim().split(" ");
       p.innerHTML = "";
@@ -48,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const rect = section.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // прогресс от 0 до 1 внутри блока
       let progress = (windowHeight - rect.top) / (windowHeight + rect.height);
       progress = Math.min(Math.max(progress, 0), 1);
 

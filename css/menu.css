@@ -2,12 +2,19 @@
   touch-action: manipulation;
 }
 
+html, body {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
   margin: 0;
   padding: 0;
   display: block;
   color: white;
-  background-color: rgb(24, 23, 23);
+  background-color: #1c1410;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
@@ -286,13 +293,13 @@ body {
   transform: translateY(300px);
   transition:
     opacity 6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 2s cubic-bezier(0.22, 1, 0.36, 1);
+    transform 2s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 .anim-p {
   opacity: 0;
-  transform: translateY(-300px);
-  animation: textReveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transform: translateY(300px);
+  animation: textReveal 2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
   animation-delay: 0.5s;
 }
 
@@ -304,7 +311,6 @@ body {
 .menu-hero {
   text-align: center;
   padding: 100px 20px;
-  background: #0f0f0f;
 }
 
 .line {
@@ -315,13 +321,13 @@ body {
 }
 
 .top {
-  animation: lineReveal 2s ease-out forwards;
-  animation-delay: 1.5s
+  animation: lineReveal 0.5s ease-out forwards;
+  animation-delay: 2.6s
 }
 
 .bottom {
   animation: lineReveal 0.5s ease-out forwards;
-  animation-delay: 2.7s;
+  animation-delay: 2.6s;
 }
 
 @keyframes lineReveal {
@@ -353,8 +359,6 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* ===== COFFEE SECTIONS ===== */
-
 .coffee-section {
   padding: 60px 20px;
 }
@@ -370,8 +374,6 @@ body {
   font-style: sans-serif Arial;
 }
 
-/* ===== HORIZONTAL SCROLL ===== */
-
 .coffee-scroll {
   display: flex;
   gap: 18px;
@@ -386,18 +388,16 @@ body {
   display: none;
 }
 
-/* ===== CARD ===== */
-
 .coffee-card {
   flex: 0 0 180px;
   height: 260px;
 
-  background: #b1aeab;
+  background: #d7c2ad;
   border-radius: 999px;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 
   padding: 16px;
@@ -406,20 +406,28 @@ body {
 
   scroll-snap-align: start;
 
-  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.04),
-  0 12px 28 rgba(0,0,0,0.25);
+  box-shadow:
+    inset 0 0 0 1px rgba(0,0,0,0.04),
+    0 12px 28px rgba(0,0,0,0.25);
 
+  opacity: 0;
+  transform: translateY(30px);
   transition:
-    transform 0.3s ease,
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    background 0.6s ease,
     box-shadow 0.3s ease;
-    transition: all 0.3s ease;
 }
 
-/* ===== IMAGE ===== */
+.coffee-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .coffee-card img {
   max-height: 300px;
-  width: 300px;
+  width: auto;
+  display: block;
   object-fit: contain;
   object-position: center;
   position: absolute;
@@ -427,25 +435,29 @@ body {
   transition: transform 0.6s ease-out;
 }
 
-.coffee-card.touch-hover img {
-  background-color: red;
+.coffee-card.touch-hover img,
+.coffee-card.show:hover img {
   transform: scale(1.30) rotate(10deg);
 }
 
-/* ===== NAME ===== */
-
-.coffee-name {
-  margin-top: auto;
-  font-size: 20px;
-  font-weight: 800;
-  color: #2b2b2b;
-  text-align: center;
-  z-index: 2;
-  -webkit-text-stroke: 1px black;
-  font-style: sans-serif Arial;
+.coffee-card.touch-hover,
+.coffee-card.show:hover {
+  background: #c6a96f;
+  transform: translateY(-8px);
+  box-shadow: inset 0 0 0 1px rgba(198, 169, 111,0.5),
+  0 20px 45px rgba(0,0,0,0.35);
 }
 
-/* ===== LINK RESET ===== */
+.coffee-name {
+  font-size: 15px;
+  margin: 10px;
+  font-weight: 800;
+  color: #3e2723;
+  text-align: center;
+  text-transform: uppercase;
+  z-index: 2;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
 
 .card-link {
   display: flex;
@@ -476,6 +488,12 @@ body {
 .modal.active {
   opacity: 1;
   pointer-events: all;
+}
+
+#modalTitle {
+  text-transform: uppercase;
+  letter-spacing: 1.7px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .modal-content {
@@ -555,13 +573,13 @@ body {
 .modal.active .modal-image {
   transform: translateX(0);
   opacity: 1;
-  transition: all 1s ease;
+  transition: all 0.6s cubic-bezier(0.1, -0.6, 0.2, 0);
 }
 
 .modal.active .modal-info {
   transform: translateX(0);
   opacity: 1;
-  transition: all 1s ease 0.1s;
+  transition: all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) 0.1s;
 }
 
 .modal-image img {
@@ -573,7 +591,7 @@ body {
   display: block;
   margin-top: 10px;
   font-weight: bold;
-  color: red;
+  color: #e4bd70;
 }
 
 .close-btn {
@@ -601,7 +619,6 @@ body {
 .arrow.left { left: 10px; }
 .arrow.right { right: 10px; }
 
-/* CARD END*/
 .coffee-footer {
   background: linear-gradient(to bottom, #f5e6d3 0%, #6f4e37 40%, #3e2723 100%);
   color: #fff;
@@ -646,7 +663,6 @@ body {
   transform: translateY(-8px);
 }
 
-/* Нижний блок */
 .coffee-bottom {
   display: flex;
   flex-wrap: wrap;
@@ -655,6 +671,7 @@ body {
 
 .coffee-info {
   flex: 1;
+  text-align: center;
 }
 
 .coffee-info h2 {
@@ -667,7 +684,12 @@ body {
   line-height: 1.6;
 }
 
-/* Соцсети */
+.coffee-socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .coffee-socials a {
   display: inline-flex;
   justify-content: center;
@@ -697,5 +719,3 @@ body {
   text-align: center;
   font-weight: 800;
 }
-
-
