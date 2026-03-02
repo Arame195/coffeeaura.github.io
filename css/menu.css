@@ -2,11 +2,16 @@
   touch-action: manipulation;
 }
 
-html, body {
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-    -ms-overflow-style: scrollbar;
-    -webkit-tap-highlight-color: transparent;
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -18,6 +23,7 @@ body {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
 .section-center {
   position: absolute;
   top: 50%;
@@ -32,13 +38,13 @@ body {
 }
 
 [type="checkbox"]:checked,
-[type="checkbox"]:not(:checked){
+[type="checkbox"]:not(:checked) {
   position: absolute;
   left: -9999px;
 }
 
-.menu-icon:checked + label,
-.menu-icon:not(:checked) + label{
+.menu-icon:checked+label,
+.menu-icon:not(:checked)+label {
   position: fixed;
   top: 63px;
   right: 75px;
@@ -51,8 +57,8 @@ body {
   z-index: 10;
 }
 
-.menu-icon:checked + label:before,
-.menu-icon:not(:checked) + label:before{
+.menu-icon:checked+label:before,
+.menu-icon:not(:checked)+label:before {
   position: absolute;
   content: '';
   display: block;
@@ -63,15 +69,15 @@ body {
   left: 0;
   border-top: 2px solid #ececee;
   border-bottom: 2px solid #ececee;
-  transition: border-width 100ms 1500ms ease, 
-              top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms ease,
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: border-width 100ms 1500ms ease,
+    top 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 100ms 1600ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 200ms ease,
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.menu-icon:checked + label:after,
-.menu-icon:not(:checked) + label:after{
+.menu-icon:checked+label:after,
+.menu-icon:not(:checked)+label:after {
   position: absolute;
   content: '';
   display: block;
@@ -82,34 +88,34 @@ body {
   right: 4px;
   background-color: #ececee;
   margin-top: -1px;
-  transition: width 100ms 1750ms ease, 
-              right 100ms 1750ms ease,
-              margin-top 100ms ease, 
-              transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: width 100ms 1750ms ease,
+    right 100ms 1750ms ease,
+    margin-top 100ms ease,
+    transform 200ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.menu-icon:checked + label:before{
+.menu-icon:checked+label:before {
   top: 10px;
   transform: rotate(45deg);
   height: 2px;
   background-color: #ececee;
   border-width: 0;
-  transition: border-width 100ms 340ms ease, 
-              top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1), 
-              background-color 200ms 500ms ease,
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: border-width 100ms 340ms ease,
+    top 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 100ms 300ms cubic-bezier(0.23, 1, 0.32, 1),
+    background-color 200ms 500ms ease,
+    transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.menu-icon:checked + label:after{
+.menu-icon:checked+label:after {
   width: 30px;
   margin-top: 0;
   right: 0;
   transform: rotate(-45deg);
   transition: width 100ms ease,
-              right 100ms ease,  
-              margin-top 100ms 500ms ease, 
-              transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
+    right 100ms ease,
+    margin-top 100ms 500ms ease,
+    transform 200ms 1700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .lang-switch li button {
@@ -117,8 +123,8 @@ body {
   border-radius: 20px;
 }
 
-.nav{
-    pointer-events: none;
+.nav {
+  pointer-events: none;
   position: fixed;
   top: 33px;
   right: 50px;
@@ -129,41 +135,64 @@ body {
   margin: 0;
   z-index: 9;
   overflow: hidden;
-  box-shadow: 0 8px 30px 0 rgba(0,0,0,0.3);
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.3);
   background-color: #353746;
   animation: border-transform 7s linear infinite;
-  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 1100ms ease,
-              width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
-}
-@keyframes border-transform{
-    0%,100% { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; } 
-  14% { border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%; } 
-  28% { border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%; } 
-  42% { border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%; } 
-  56% { border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%; } 
-  70% { border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%; } 
-  84% { border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%; } 
+  transition: top 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+    right 350ms 1100ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 250ms 1100ms ease,
+    width 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 650ms 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.menu-icon:checked ~ .nav {
-    pointer-events: auto;
+@keyframes border-transform {
+
+  0%,
+  100% {
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+  }
+}
+
+.menu-icon:checked~.nav {
+  pointer-events: auto;
   animation-play-state: paused;
   top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   width: 200%;
   height: 200%;
-  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),  
-              right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
-              transform 250ms 700ms ease,
-              width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
-              height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    right 350ms 700ms cubic-bezier(0.23, 1, 0.32, 1),
+    transform 250ms 700ms ease,
+    width 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1),
+    height 750ms 1000ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.nav ul{
+.nav ul {
   position: absolute;
   top: 50%;
   left: 0;
@@ -176,7 +205,8 @@ body {
   transform: translateY(-50%);
   list-style: none;
 }
-.nav ul li{
+
+.nav ul li {
   position: relative;
   display: block;
   width: 100%;
@@ -190,19 +220,24 @@ body {
   transform: translateY(30px);
   transition: all 250ms linear;
 }
-.nav ul li:nth-child(1){
+
+.nav ul li:nth-child(1) {
   transition-delay: 200ms;
 }
-.nav ul li:nth-child(2){
+
+.nav ul li:nth-child(2) {
   transition-delay: 150ms;
 }
-.nav ul li:nth-child(3){
+
+.nav ul li:nth-child(3) {
   transition-delay: 100ms;
 }
-.nav ul li:nth-child(4){
+
+.nav ul li:nth-child(4) {
   transition-delay: 50ms;
 }
-.nav ul li a{
+
+.nav ul li a {
   font-family: 'Montserrat', sans-serif;
   text-decoration: none;
   font-size: 3vh;
@@ -214,11 +249,13 @@ body {
   color: #ececee;
   transition: all 250ms linear;
 }
-.nav ul li a:hover{
+
+.nav ul li a:hover {
   text-decoration: none;
   color: #ffeba7;
 }
-.nav ul li a:after{
+
+.nav ul li a:after {
   display: block;
   position: absolute;
   top: 50%;
@@ -231,40 +268,48 @@ body {
   opacity: 0.8;
   transition: width 250ms linear;
 }
-.nav ul li a:hover:after{
+
+.nav ul li a:hover:after {
   width: 100%;
 }
 
-.menu-icon:checked ~ .nav  ul li {
+.menu-icon:checked~.nav ul li {
   pointer-events: auto;
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
   transition: opacity 350ms ease,
-              transform 250ms ease;
+    transform 250ms ease;
 }
-.menu-icon:checked ~ .nav ul li:nth-child(1){
+
+.menu-icon:checked~.nav ul li:nth-child(1) {
   transition-delay: 1400ms;
 }
-.menu-icon:checked ~ .nav ul li:nth-child(2){
+
+.menu-icon:checked~.nav ul li:nth-child(2) {
   transition-delay: 1480ms;
 }
-.menu-icon:checked ~ .nav ul li:nth-child(3){
+
+.menu-icon:checked~.nav ul li:nth-child(3) {
   transition-delay: 1560ms;
 }
-.menu-icon:checked ~ .nav ul li:nth-child(4){
+
+.menu-icon:checked~.nav ul li:nth-child(4) {
   transition-delay: 1640ms;
 }
 
 @media screen and (max-width: 991px) {
-  .menu-icon:checked + label,
-  .menu-icon:not(:checked) + label{
+
+  .menu-icon:checked+label,
+  .menu-icon:not(:checked)+label {
     right: 55px;
   }
-  .nav{
+
+  .nav {
     right: 30px;
   }
-  .nav ul li a{
+
+  .nav ul li a {
     font-size: 3vh;
   }
 }
@@ -278,6 +323,7 @@ body {
 
 .aura-menu-start-page {
   color: white;
+  text-align: center;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 800;
   text-transform: uppercase;
@@ -407,8 +453,8 @@ body {
   scroll-snap-align: start;
 
   box-shadow:
-    inset 0 0 0 1px rgba(0,0,0,0.04),
-    0 12px 28px rgba(0,0,0,0.25);
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04),
+    0 12px 28px rgba(0, 0, 0, 0.25);
 
   opacity: 0;
   transform: translateY(30px);
@@ -444,8 +490,8 @@ body {
 .coffee-card.show:hover {
   background: #c6a96f;
   transform: translateY(-8px);
-  box-shadow: inset 0 0 0 1px rgba(198, 169, 111,0.5),
-  0 20px 45px rgba(0,0,0,0.35);
+  box-shadow: inset 0 0 0 1px rgba(198, 169, 111, 0.5),
+    0 20px 45px rgba(0, 0, 0, 0.35);
 }
 
 .coffee-name {
@@ -616,8 +662,13 @@ body {
   color: blue;
 }
 
-.arrow.left { left: 10px; }
-.arrow.right { right: 10px; }
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
 
 .coffee-footer {
   background: linear-gradient(to bottom, #f5e6d3 0%, #6f4e37 40%, #3e2723 100%);
@@ -718,4 +769,30 @@ body {
   padding: 20px;
   text-align: center;
   font-weight: 800;
+}
+
+/* Desktops Adaptation */
+@media only screen and (min-width: 1200px) {
+  .anim-p {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .coffee-scroll {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    overflow: visible;
+  }
+
+  .coffee-card {
+    flex: unset;
+  }
+
+  .coffee-section h2 {
+    font-size: 80px;
+    text-align: center;
+  }
 }
